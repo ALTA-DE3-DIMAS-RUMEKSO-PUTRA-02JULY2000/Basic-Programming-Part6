@@ -1,5 +1,8 @@
 def find_max_sum_sub_array(k, arr):
-    return 0
+    max_sum = sum(arr[:k])
+    for i in range(1, len(arr) - k +1):
+        max_sum = max(max_sum,sum(arr[i:i+k]))
+    return max_sum
 
 if __name__ == '__main__':
     print(find_max_sum_sub_array(3, [2, 1, 5, 1, 3, 2])) # 9
